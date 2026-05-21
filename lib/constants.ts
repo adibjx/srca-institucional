@@ -10,9 +10,6 @@ export const SITE = {
   ogImage: "/images/og-default.jpg",
   locale: "pt_BR",
   gtmId: "GTM-NXFD7QHC",
-  gtagId: "GT-NGKR33Z7",
-  ga4Id: "G-TCHNL3CVQG",
-  clarityId: "wmcfkeogc1",
 } as const;
 
 export const CONTACT = {
