@@ -45,15 +45,15 @@ export function Header() {
           : "bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-20 w-full max-w-container items-center justify-between px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-24 w-full max-w-container items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link href="/" className="flex items-center gap-3" aria-label={`${SITE.name} — Início`}>
           <Image
             src={LOGO_URL}
             alt={SITE.name}
-            width={160}
-            height={48}
+            width={260}
+            height={78}
             priority
-            className="h-10 w-auto object-contain"
+            className="h-16 w-auto object-contain md:h-[72px]"
           />
         </Link>
 

@@ -16,12 +16,12 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-40"
+        className="object-cover object-center opacity-70"
       />
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-br from-primary-950/95 via-primary-900/85 to-primary-800/75"
+        className="absolute inset-0 bg-gradient-to-br from-primary-950/75 via-primary-900/60 to-primary-800/45"
       />
       <div
         aria-hidden="true"
