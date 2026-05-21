@@ -183,11 +183,12 @@ export default function ContatoPage() {
                   a situação da sua empresa. Retornamos em até 2 dias úteis.
                 </p>
 
-                <div className="mt-8">
+                <div className="mt-8" data-section="contact">
                   <a
                     href={WHATSAPP_PREFILLED}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-cta-label="contato_whatsapp_principal"
                     className="inline-flex h-14 w-full items-center justify-center gap-3 rounded-md bg-accent-500 px-8 text-base font-medium tracking-wide text-primary-950 shadow-sm transition-all duration-200 hover:bg-accent-400 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 sm:w-auto"
                   >
                     <span className="h-5 w-5">

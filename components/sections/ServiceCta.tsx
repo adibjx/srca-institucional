@@ -22,7 +22,7 @@ export function ServiceCta({
         className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-accent-500/10 blur-3xl"
       />
 
-      <Container className="relative">
+      <Container className="relative" data-section="cta">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-display-sm leading-tight text-cream-50 md:text-display-md">
             {title}
@@ -33,7 +33,7 @@ export function ServiceCta({
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Button href="/contato" variant="primary" size="lg">
+            <Button href="/contato" variant="primary" size="lg" data-cta-label="service_cta_contato">
               Entrar em contato
             </Button>
             <Button
@@ -42,6 +42,7 @@ export function ServiceCta({
               variant="outline"
               size="lg"
               className="text-accent-300 hover:text-primary-950"
+              data-cta-label="service_cta_whatsapp"
             >
               WhatsApp
             </Button>

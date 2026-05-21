@@ -42,11 +42,11 @@ export function CtaFinal() {
             situação da sua empresa.
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Button href="/contato" variant="primary" size="lg">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4" data-section="cta">
+            <Button href="/contato" variant="primary" size="lg" data-cta-label="home_final_contato">
               Entrar em contato
             </Button>
-            <Button href={CONTACT.whatsappLink} external variant="outline" size="lg" className="text-accent-300 hover:text-primary-950">
+            <Button href={CONTACT.whatsappLink} external variant="outline" size="lg" className="text-accent-300 hover:text-primary-950" data-cta-label="home_final_whatsapp">
               <svg viewBox="0 0 24 24" fill="currentColor" className="mr-2 h-5 w-5" aria-hidden="true">
                 <path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z" />
               </svg>

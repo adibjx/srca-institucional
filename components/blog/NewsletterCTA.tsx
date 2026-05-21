@@ -18,6 +18,7 @@ export function NewsletterCTA() {
           href={CONTACT.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
+          data-cta-label="blog_sidebar_whatsapp"
           className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-md bg-accent-500 px-6 text-sm font-medium tracking-wide text-primary-950 transition-colors hover:bg-accent-400"
         >
           Fale com o SRCA

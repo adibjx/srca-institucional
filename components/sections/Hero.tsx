@@ -7,6 +7,7 @@ export function Hero() {
   return (
     <section
       id="hero"
+      data-section="hero"
       className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-primary-950 text-cream-50 md:min-h-screen"
     >
       <Image
@@ -48,7 +49,13 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <Button href={CONTACT.whatsappLink} external variant="primary" size="lg">
+            <Button
+              href={CONTACT.whatsappLink}
+              external
+              variant="primary"
+              size="lg"
+              data-cta-label="hero_whatsapp"
+            >
               Fale com o escritório
             </Button>
             <Button href="#servicos" variant="outline" size="lg" className="text-accent-300 hover:text-primary-950">

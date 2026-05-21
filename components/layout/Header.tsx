@@ -132,7 +132,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href={CONTACT.whatsappLink} external size="sm" variant="primary">
+          <Button href={CONTACT.whatsappLink} external size="sm" variant="primary" data-cta-label="header_whatsapp">
             Fale com o escritório
           </Button>
         </div>

@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { Analytics } from "@/components/layout/Analytics";
 import { defaultMetadata } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/metadata";
 import { SITE } from "@/lib/constants";
@@ -70,6 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <main id="main">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );
