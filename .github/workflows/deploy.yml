@@ -37,15 +37,15 @@ jobs:
           sudo apt-get install -y lftp
           lftp -u "$FTP_USER","$FTP_PASSWORD" -p "$FTP_PORT" "$FTP_PROTO://$FTP_HOST" <<'EOF'
           set ssl:verify-certificate no
+          set ftp:ssl-protect-data no
+          set ftp:passive-mode true
           pwd
-          echo "--- ls / ---"
+          echo "--- ls . ---"
           ls -la
-          echo "--- ls public_html/ ---"
-          ls -la public_html/ || echo "(no public_html)"
-          echo "--- ls domains/ ---"
-          ls -la domains/ || echo "(no domains)"
-          echo "--- find srcatributario ---"
-          find domains/ -maxdepth 3 -type d 2>/dev/null || true
+          echo "--- ls public_html ---"
+          ls -la public_html/ || echo "(no public_html here)"
+          echo "--- ls domains ---"
+          ls -la domains/ || echo "(no domains here)"
           bye
           EOF
         env:
