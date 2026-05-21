@@ -98,7 +98,7 @@ export const PARTNERS = [
     oab: "OAB/MG 205.573",
     role: "Sócio",
     focus: "Planejamento tributário e estruturação patrimonial",
-    photo: "https://srcatributario.adv.br/assets/socios/manoel-squiapati.png",
+    photo: "/images/manoel-squiapati.png",
   },
   {
     slug: "victor-romano",
@@ -106,7 +106,7 @@ export const PARTNERS = [
     oab: "OAB/MG 244.504",
     role: "Sócio",
     focus: "Planejamento tributário e contencioso administrativo e judicial",
-    photo: "https://srcatributario.adv.br/assets/socios/victor-romano.png",
+    photo: "/images/victor-romano.png",
   },
   {
     slug: "bruno-chagas",
@@ -114,7 +114,7 @@ export const PARTNERS = [
     oab: "OAB/MG 213.733",
     role: "Sócio",
     focus: "Holding familiar, planejamento sucessório e contencioso judicial",
-    photo: "https://srcatributario.adv.br/assets/socios/bruno-chagas.png",
+    photo: "/images/bruno-chagas.png",
   },
 ] as const;
 

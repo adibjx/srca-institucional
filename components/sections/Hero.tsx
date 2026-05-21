@@ -11,12 +11,20 @@ export function Hero() {
       className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-primary-950 text-cream-50 md:min-h-screen"
     >
       <Image
-        src="https://srcatributario.adv.br/assets/imagery/bg-desk.jpg"
+        src="/images/bg-desk.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-70"
+        className="hidden object-cover object-center opacity-70 md:block"
+      />
+      <Image
+        src="/images/bg-mobile.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="block object-cover object-center opacity-70 md:hidden"
       />
 
       <div

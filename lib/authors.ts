@@ -19,7 +19,7 @@ export const authors: Record<AuthorSlug, Author> = {
     role: "Sócio fundador",
     specialty: "Planejamento Tributário e Estruturação Patrimonial",
     bio: "Atua em planejamento tributário e estruturação patrimonial, com foco em reorganizações societárias e operações onde o impacto tributário é determinante.",
-    image: "https://srcatributario.adv.br/assets/socios/manoel-squiapati.png",
+    image: "/images/manoel-squiapati.png",
   },
   "victor-romano": {
     name: "Victor Romano",
@@ -27,7 +27,7 @@ export const authors: Record<AuthorSlug, Author> = {
     role: "Sócio",
     specialty: "Planejamento Tributário e Contencioso",
     bio: "Atua em planejamento tributário e contencioso administrativo e judicial. Conduz a defesa de empresas autuadas perante a Receita Federal e fazendas estaduais.",
-    image: "https://srcatributario.adv.br/assets/socios/victor-romano.png",
+    image: "/images/victor-romano.png",
   },
   "bruno-chagas": {
     name: "Bruno Chagas",
@@ -35,7 +35,7 @@ export const authors: Record<AuthorSlug, Author> = {
     role: "Sócio",
     specialty: "Holding, Sucessão e Contencioso Judicial",
     bio: "Atua em holding familiar, planejamento sucessório e contencioso judicial. Estrutura juridicamente grupos empresariais e orienta sócios na organização patrimonial.",
-    image: "https://srcatributario.adv.br/assets/socios/bruno-chagas.png",
+    image: "/images/bruno-chagas.png",
   },
 };
 

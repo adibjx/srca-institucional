@@ -23,7 +23,7 @@ const PARTNERS = [
     name: "Manoel Squiapati",
     oab: "OAB/MG 205.573",
     tag: "Planejamento Tributário · Estruturação Patrimonial",
-    photo: "https://srcatributario.adv.br/assets/socios/manoel-squiapati.png",
+    photo: "/images/manoel-squiapati.png",
     bio: [
       "Sócio fundador do SRCA. Atua em planejamento tributário e estruturação patrimonial, com foco em reorganizações societárias e operações onde o impacto tributário é determinante para a viabilidade do negócio.",
       "Conduz análises de regime de tributação, composição societária e distribuição de resultados para empresas de diversos setores. Seu trabalho parte do entendimento do negócio do cliente para propor estruturações que sejam juridicamente seguras e economicamente viáveis.",
@@ -35,7 +35,7 @@ const PARTNERS = [
     name: "Victor Romano",
     oab: "OAB/MG 244.504",
     tag: "Planejamento Tributário · Contencioso",
-    photo: "https://srcatributario.adv.br/assets/socios/victor-romano.png",
+    photo: "/images/victor-romano.png",
     bio: [
       "Atua em planejamento tributário e contencioso administrativo e judicial. No escritório, conduz a análise de cobranças que podem ser questionadas e a defesa de empresas autuadas perante a Receita Federal e as fazendas estaduais.",
       "Seu trabalho no contencioso inclui a elaboração de impugnações, recursos administrativos e peças judiciais em todas as instâncias. No planejamento, participa da análise de estruturas fiscais e da identificação de oportunidades de correção ou economia.",
@@ -47,7 +47,7 @@ const PARTNERS = [
     name: "Bruno Chagas",
     oab: "OAB/MG 213.733",
     tag: "Holding · Sucessão · Contencioso Judicial",
-    photo: "https://srcatributario.adv.br/assets/socios/bruno-chagas.png",
+    photo: "/images/bruno-chagas.png",
     bio: [
       "Atua em holding familiar, planejamento sucessório e contencioso judicial. É responsável pela estruturação jurídica de grupos empresariais e pela orientação de sócios na organização patrimonial e planejamento de sucessão.",
       "Conduz o trabalho de constituição de holdings, elaboração de contratos sociais com cláusulas de governança, escrituras de doação com reserva de usufruto e acordos de sócios. No contencioso judicial, atua na defesa de empresas em ações tributárias perante a Justiça Federal e Estadual.",

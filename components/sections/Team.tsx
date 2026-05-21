@@ -10,7 +10,7 @@ const PARTNERS = [
     oab: "OAB/MG 205.573",
     bio:
       "Sócio fundador. Atua em planejamento tributário e estruturação patrimonial, com foco em reorganizações societárias e operações onde o impacto tributário é determinante para a viabilidade do negócio.",
-    photo: "https://srcatributario.adv.br/assets/socios/manoel-squiapati.png",
+    photo: "/images/manoel-squiapati.png",
   },
   {
     slug: "victor-romano",
@@ -19,7 +19,7 @@ const PARTNERS = [
     oab: "OAB/MG 244.504",
     bio:
       "Atua em planejamento tributário e contencioso administrativo e judicial. Conduz a análise de cobranças questionáveis e a defesa de empresas autuadas perante a Receita Federal e as fazendas estaduais.",
-    photo: "https://srcatributario.adv.br/assets/socios/victor-romano.png",
+    photo: "/images/victor-romano.png",
   },
   {
     slug: "bruno-chagas",
@@ -28,7 +28,7 @@ const PARTNERS = [
     oab: "OAB/MG 213.733",
     bio:
       "Atua em holding familiar, planejamento sucessório e contencioso judicial. Estrutura juridicamente grupos empresariais e orienta sócios na organização patrimonial e planejamento de sucessão.",
-    photo: "https://srcatributario.adv.br/assets/socios/bruno-chagas.png",
+    photo: "/images/bruno-chagas.png",
   },
 ];
 
