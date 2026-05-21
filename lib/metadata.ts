@@ -63,6 +63,13 @@ export const defaultMetadata: Metadata = {
     "Uberaba",
   ],
   alternates: { canonical: SITE.url },
+  icons: {
+    icon: [
+      { url: "/images/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
   openGraph: {
     type: "website",
     locale: SITE.locale,
