@@ -35,10 +35,9 @@ jobs:
       - name: Debug — list FTP root
         run: |
           sudo apt-get install -y lftp
-          lftp -u "$FTP_USER","$FTP_PASSWORD" -p "$FTP_PORT" "$FTP_PROTO://$FTP_HOST" <<'EOF'
-          set ssl:verify-certificate no
-          set ftp:ssl-protect-data no
+          lftp -u "$FTP_USER","$FTP_PASSWORD" -p 21 "ftp://$FTP_HOST" <<'EOF'
           set ftp:passive-mode true
+          set ftp:ssl-allow false
           pwd
           echo "--- ls . ---"
           ls -la
