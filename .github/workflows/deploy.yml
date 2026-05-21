@@ -32,6 +32,29 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
 
+      - name: Debug — list FTP root
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u "$FTP_USER","$FTP_PASSWORD" -p "$FTP_PORT" "$FTP_PROTO://$FTP_HOST" <<'EOF'
+          set ssl:verify-certificate no
+          pwd
+          echo "--- ls / ---"
+          ls -la
+          echo "--- ls public_html/ ---"
+          ls -la public_html/ || echo "(no public_html)"
+          echo "--- ls domains/ ---"
+          ls -la domains/ || echo "(no domains)"
+          echo "--- find srcatributario ---"
+          find domains/ -maxdepth 3 -type d 2>/dev/null || true
+          bye
+          EOF
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT || '21' }}
+          FTP_PROTO: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
