@@ -121,5 +121,4 @@ export const PARTNERS = [
 export const OAB_DISCLAIMER =
   "Esta comunicação tem caráter meramente informativo e não configura oferta de serviços advocatícios ou consultoria jurídica formal, em conformidade com o Provimento 94/2000 da OAB.";
 
-export const LOGO_URL =
-  "https://srcatributario.adv.br/assets/imagery/logo/srca-logo-cropped.png";
+export const LOGO_URL = "/images/srca-logo-cropped.png";
