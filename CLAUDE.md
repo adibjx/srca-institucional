@@ -1,0 +1,72 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project
+
+Institutional site for **SRCA Advocacia Tributária** (Uberaba/MG tax law firm). Static-exported Next.js site deployed to Hostinger shared hosting via GitHub Actions FTP. Content in Portuguese (pt-BR).
+
+## Commands
+
+```bash
+npm run dev          # Dev server (localhost:3000)
+npm run build        # Static export → out/
+npm run lint         # next lint
+npm run type-check   # tsc --noEmit
+npx serve out        # Serve the static build locally
+```
+
+There is no test suite.
+
+## Architecture
+
+### Static export — non-negotiable constraints
+`next.config.mjs` sets `output: "export"` and `trailingSlash: true`. This forbids:
+- API routes (`app/api/...`) — contact "form" is a WhatsApp deep link with prefilled text
+- `middleware.ts`, dynamic `headers()`/`cookies()`, ISR
+- Optimized `next/image` — `images.unoptimized: true`; pre-compress images before adding
+
+Build output goes to `out/`. `public/.htaccess` ships with the build to drive Apache (HTTPS forced, www→non-www, GZIP, asset cache, security headers, `ErrorDocument 404 /404.html`).
+
+### Routes (App Router)
+- `app/page.tsx` — Home (Hero, Services, Sectors, Methodology, Team, Faq, CtaFinal)
+- `app/servicos/[slug]/page.tsx` — 4 service pages, slugs from `lib/constants.ts:SERVICES`
+- `app/sobre/page.tsx` — About + partners (data inline; `app/sobre/page.tsx:20`)
+- `app/contato/page.tsx` — WhatsApp CTA + map (no form)
+- `app/blog/page.tsx` + `app/blog/[slug]/page.tsx` — MDX-powered blog
+- `app/sitemap.ts` — auto-includes blog articles via `getAllArticles()`
+- `app/not-found.tsx` — branded 404 (matched by `.htaccess`)
+
+`generateStaticParams` is required on every dynamic segment because of static export.
+
+### Data layer (`lib/`)
+- `lib/constants.ts` — single source of truth for `SITE`, `CONTACT`, `SERVICES`, `NAV`, `PARTNERS`, `LOGO_URL`. **Edit here, not in components.**
+- `lib/authors.ts`, `lib/categories.ts` — author/category lookup tables keyed by slug used in MDX frontmatter
+- `lib/metadata.ts` — `buildMetadata()`, `breadcrumbJsonLd()`, `personJsonLd()`, `articleJsonLd()`, etc. All pages should use `buildMetadata` so canonical/OG/Schema stay consistent
+- `lib/blog.ts` — server-only (`fs`/`path`); reads `content/blog/*.mdx`. **Never import from a client component.**
+- `lib/blog-shared.ts` — pure helpers (`formatDate`, `ArticleMeta` type) safe to import anywhere. This split exists because importing `lib/blog` into a client bundle triggers `node:fs` webpack errors.
+- `lib/mdx.tsx` — MDX components map + rehype/remark plugin config (slug, autolink, gfm)
+
+### Components
+- `components/ui/` — primitives (`Button`, `Container`, `Card`, etc.)
+- `components/sections/` — home/about page sections. `Faq.tsx` is `"use client"`; its data lives in `faq-items.ts` so server components can also import it (same pattern as the `blog`/`blog-shared` split)
+- `components/services/` — service-page building blocks
+- `components/layout/Analytics.tsx` — `"use client"`; global click delegation that pushes custom events (`whatsapp_click`, `cta_click`, `social_click`, etc.) to `window.dataLayer`. Add `data-cta-label="..."` to anchors/buttons to track them. GTM is initialized in `app/layout.tsx`; GA4/Ads/Clarity are configured **inside GTM**, not in code
+
+### Blog content flow
+1. `content/blog/<slug>.mdx` with frontmatter (see README for schema — `author` and `category` must match slugs in `lib/authors.ts` / `lib/categories.ts`)
+2. `lib/blog.ts:getAllArticles` reads + sorts by date
+3. Listing page, article page, sitemap, and related-articles all derive from this
+
+### Styling
+Tailwind with a custom `srca` typography variant in `tailwind.config.ts` and brand tokens (`primary-*`, `accent-*`, `cream-*`, `font-serif`, `font-sans`, `text-display-*`). Use existing tokens rather than raw hex/px values.
+
+## Deploy
+
+Push to `main` triggers `.github/workflows/deploy.yml`: build with `NEXT_PUBLIC_SITE_URL` + `NEXT_PUBLIC_GTM_ID` secrets, then FTP-upload `out/` to Hostinger.
+
+**Hostinger FTP gotcha:** the primary FTP account is chrooted away from the live document root. A domain-scoped FTP sub-account (`u114826194.deploy`) pointing to `/home/u114826194/domains/srcatributario.adv.br/public_html` is used, with `FTP_SERVER_DIR=./`. If a deploy "succeeds" but the site doesn't update, check the FTP account scope first. See `DEPLOY-STATUS.md` for the full history.
+
+## Assets
+
+All images are self-hosted under `public/images/`. Earlier versions referenced `https://srcatributario.adv.br/assets/...` (legacy site); those URLs return 404 — never reintroduce external asset URLs for first-party images.
