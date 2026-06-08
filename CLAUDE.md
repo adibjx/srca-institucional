@@ -58,6 +58,16 @@ Build output goes to `out/`. `public/.htaccess` ships with the build to drive Ap
 2. `lib/blog.ts:getAllArticles` reads + sorts by date
 3. Listing page, article page, sitemap, and related-articles all derive from this
 
+### Blog SEO checklist (apply when creating any new article)
+The frontmatter `title` is used as **both** the page `<title>` and the rendered `<h1>` — there is no separate SEO-title field. Optimize for both at once:
+
+- **`title`**: ≤ 60 chars. Lead with the primary keyword. Avoid colons that push keywords past char 50. The browser tab will show `<title> | SRCA Advocacia Tributária`, so leave headroom for the brand suffix.
+- **`description`**: 140–160 chars. Open with the primary keyword (matches the title). State the concrete value the reader gets. No marketing fluff.
+- **First paragraph of body**: must contain the primary keyword **verbatim** (same wording as the H1) plus 2–3 secondary keywords. SEO crawlers flag "H1 words not in text" if the H1 and intro diverge.
+- **`date`**: today's date (`YYYY-MM-DD`). Never backdate.
+- **`tags`**: 4–6 specific tags. Mix broad (e.g. "reforma tributária") with specific (e.g. "CBS", "LC 214").
+- **H2s in body**: include keyword variations naturally; don't keyword-stuff.
+
 ### Styling
 Tailwind with a custom `srca` typography variant in `tailwind.config.ts` and brand tokens (`primary-*`, `accent-*`, `cream-*`, `font-serif`, `font-sans`, `text-display-*`). Use existing tokens rather than raw hex/px values.
 
