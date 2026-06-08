@@ -54,9 +54,10 @@ export function Educational() {
             </p>
             <p>
               Uma revisão tributária bem feita não começa pela alíquota. Começa
-              pela compreensão do negócio: como a empresa está organizada, como
-              distribui resultados, quais operações realiza e como cada uma é
-              tratada fiscalmente. A partir daí, é possível apontar o que está
+              pela inteligência aplicada ao negócio e ao patrimônio dos sócios:
+              como a empresa está organizada, como distribui resultados, quais
+              operações realiza e como cada uma é tratada fiscalmente. É esse o
+              trabalho de uma advocacia tributária dedicada — apontar o que está
               correto, o que pode ser corrigido e o que representa risco real.
             </p>
           </div>

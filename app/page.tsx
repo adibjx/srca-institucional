@@ -11,9 +11,9 @@ import { FAQ_ITEMS } from "@/components/sections/faq-items";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 
 export const metadata: Metadata = buildMetadata({
-  title: "SRCA Advocacia Tributária | Planejamento Tributário para Empresas",
+  title: "Advocacia Tributária para Empresas | SRCA",
   description:
-    "Escritório exclusivamente tributário em Uberaba-MG. Planejamento tributário, contencioso, holding patrimonial e sucessório para empresas do Triângulo Mineiro e todo o Brasil.",
+    "Advocacia tributária em Uberaba-MG com atuação nacional. Planejamento, contencioso, holding e sucessão para empresas em todo o Brasil.",
   path: "/",
 });
 

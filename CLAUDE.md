@@ -58,6 +58,15 @@ Build output goes to `out/`. `public/.htaccess` ships with the build to drive Ap
 2. `lib/blog.ts:getAllArticles` reads + sorts by date
 3. Listing page, article page, sitemap, and related-articles all derive from this
 
+### Page-level SEO checklist (apply to any new page, not just blog)
+Run before shipping any new route or copy change. Same constraints apply to home, service pages, sobre, contato:
+
+- **Title via `buildMetadata`**: ≤ 50 chars (Seobility flags >580px ≈ 60 chars). Keyword first, brand last. Avoid stacking colons.
+- **Description**: ≤ 155 chars (≤ 1000px). Open with primary keyword. State concrete value.
+- **H1**: every word in the H1 must appear at least once in body prose (not just in section eyebrows or spans). Crawlers flag mismatches.
+- **Title-content match**: every meaningful word in the page title must appear in body prose. If the title says "Advocacia Tributária", the word "advocacia" needs to be somewhere in the page.
+- The Hero H1 is a brand element — prefer adding the missing keyword to body copy (e.g. `Educational.tsx`) rather than rewriting the Hero.
+
 ### Blog SEO checklist (apply when creating any new article)
 The frontmatter `title` is used as **both** the page `<title>` and the rendered `<h1>` — there is no separate SEO-title field. Optimize for both at once:
 
